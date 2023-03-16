@@ -13,6 +13,8 @@ namespace nathanTimeApps
     public partial class Form1 : Form
     {
         NathanTime myTime = new NathanTime();
+        NathanTime myTime2;
+
         public Form1()
         {
             InitializeComponent();
@@ -84,6 +86,13 @@ namespace nathanTimeApps
             labelMinute.Text = myTime.Minute.ToString();
             labelSecond.Text = myTime.Second.ToString();
             labelTotalSecond.Text = myTime.ConvertToSecond().ToString();
+
+            myTime2 = new NathanTime(10, 3, 3);
+            MessageBox.Show("This second time: " + 
+                myTime2.Hour.ToString() + ":" + 
+                myTime2.Minute.ToString() + ":" + 
+                myTime2.Second.ToString()
+            );
         }
 
         private void TimerTick(object sender, EventArgs e)
